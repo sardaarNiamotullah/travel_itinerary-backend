@@ -21,8 +21,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-h%9oj!+1wy@@g0!p+!y43w@&l5*mih5fpftho16a4^30n@o@!d'
+
 RAPIDAPI_KEY = config("RAPIDAPI_KEY")
 RAPIDAPI_HOST = config("RAPIDAPI_HOST")
+
+GROQ_API_KEY = config("GROQ_API_KEY")
+GROQ_MODEL = config("GROQ_MODEL")
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True

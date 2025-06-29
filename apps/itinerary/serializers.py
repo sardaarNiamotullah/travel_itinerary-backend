@@ -7,3 +7,6 @@ class ItineraryRequestSerializer(serializers.Serializer):
     def validate_date(self, value):
         # You can add custom logic here (e.g., disallow past dates)
         return value
+
+class AIChatRequestSerializer(serializers.Serializer):
+    message = serializers.CharField(required=True, help_text="Your message to the AI")
