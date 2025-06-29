@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
-
+from decouple import config
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -21,6 +21,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-h%9oj!+1wy@@g0!p+!y43w@&l5*mih5fpftho16a4^30n@o@!d'
+RAPIDAPI_KEY = config("RAPIDAPI_KEY")
+RAPIDAPI_HOST = config("RAPIDAPI_HOST")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -39,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # Default Django apps...
+    'rest_framework',
     'apps.itinerary',
 ]
 
