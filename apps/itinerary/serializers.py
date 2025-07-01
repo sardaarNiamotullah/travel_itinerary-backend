@@ -1,3 +1,4 @@
+from datetime import date, timedelta
 from rest_framework import serializers
 
 class ItineraryRequestSerializer(serializers.Serializer):
@@ -5,7 +6,13 @@ class ItineraryRequestSerializer(serializers.Serializer):
     date = serializers.DateField(required=True, format="%Y-%m-%d")
 
     def validate_date(self, value):
-        # You can add custom logic here (e.g., disallow past dates)
+        today = date.today()
+        max_allowed_date = today + timedelta(days=15)
+
+        if value < today:
+            raise serializers.ValidationError("Date cannot be in the past.")
+        if value > max_allowed_date:
+            raise serializers.ValidationError("Date cannot be more than 15 days from today.")
         return value
 
 class AIChatRequestSerializer(serializers.Serializer):
