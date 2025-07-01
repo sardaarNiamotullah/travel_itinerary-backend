@@ -9,4 +9,6 @@ class ItineraryRequestSerializer(serializers.Serializer):
         return value
 
 class AIChatRequestSerializer(serializers.Serializer):
+    itinerary_data = serializers.CharField(required=False, allow_blank=True)
     message = serializers.CharField(required=True, help_text="Your message to the AI")
+

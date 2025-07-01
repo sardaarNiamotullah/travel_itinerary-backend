@@ -48,16 +48,17 @@ def itinerary_view(request):
 def aichat_view(request):
     """
     Handles POST /api/itinerary/aichat/
-    Sends 'message' to Groq API and returns the response.
+    Sends user's message and optional itinerary context to Groq API and returns the response.
     """
     serializer = AIChatRequestSerializer(data=request.data)
     if not serializer.is_valid():
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     user_message = serializer.validated_data['message']
+    itinerary_data = serializer.validated_data.get('itinerary_data', '')
 
     try:
-        ai_reply = get_ai_response(user_message)
+        ai_reply = get_ai_response(user_message, itinerary_data)
         return Response({"reply": ai_reply}, status=status.HTTP_200_OK)
     except Exception as e:
         return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
