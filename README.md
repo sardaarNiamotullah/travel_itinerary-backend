@@ -10,37 +10,33 @@
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/chatapp.git
-   cd chatapp
+   https://github.com/sardaarNiamotullah/travel_itinerary-backend.git
+   cd travel_itinerary-backend.git
    ```
 
-2. **Backend Setup**
+2. Create a virtual environment:
    ```bash
-   cd backend_expressjs
-   npm install
-   
-   # Configure environment variables
-   cp .env.example .env
-   # Edit .env with your PostgreSQL connection string and JWT secret
-   
-   # Run database migrations
-   npx prisma migrate dev
-   
-   # Start the development server
-   npm run dev
+   python -m venv env
+   # If this do not work then try with this
+   python3 -m venv env
+   # Now activate it
+   source env/bin/activate  # On Windows: env\Scripts\activate
    ```
 
-3. **Frontend Setup**
+3. **Install dependencies:**
    ```bash
-   cd ../frontend_nextjs
-   npm install
-   
-   # Configure environment variables
-   cp .env.example .env
-   # Edit .env with your backend API URL
-   
-   # Start the development server
-   npm run dev
+   pip install -r requirements.txt # or pip3 install -r requirements.txt
+   ```
+
+4. **Set environment variables**
+   ```bash
+   pip install -r requirements.txt # or pip3 install -r requirements.txt
+
+   RAPIDAPI_KEY=your-rapid-api-key
+   RAPIDAPI_HOST=ai-weather-by-meteosource.p.rapidapi.com
+
+   GROQ_API_KEY=Your-groq-api-key
+   GROQ_MODEL=llama-3.3-70b-versatile
    ```
 
 4. **Open your browser** and navigate to `http://localhost:3000`

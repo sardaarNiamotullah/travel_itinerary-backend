@@ -35,9 +35,7 @@ DEBUG = True
 # ALLOWED_HOSTS = []
 
 ALLOWED_HOSTS = [
-    "localhost",
-    "127.0.0.1",
-    "travel-itinerary-backend-6j4k.onrender.com",  # ← ✅ Add this
+    "travel-itinerary-backend-6j4k.onrender.com",
 ]
 
 
