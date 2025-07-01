@@ -4,6 +4,8 @@ from rest_framework import status
 from .serializers import ItineraryRequestSerializer, AIChatRequestSerializer
 from .services.weather_service import fetch_weather_forecast
 from .services.aichat_service import get_ai_response, get_itinerary_from_weather
+import logging
+logger = logging.getLogger(__name__)
 
 
 @api_view(['POST'])
@@ -11,6 +13,7 @@ def itinerary_view(request):
     serializer = ItineraryRequestSerializer(data=request.data)
 
     if not serializer.is_valid():
+        logger.error(f"Validation error: {serializer.errors}")
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     destination = serializer.validated_data['destination']

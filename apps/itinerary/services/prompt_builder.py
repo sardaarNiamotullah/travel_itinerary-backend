@@ -27,7 +27,6 @@ def build_followup_prompt(itinerary_data: str) -> str:
         "The user has shared the following itinerary data. "
         "Keep this context in mind when replying:\n\n"
         f"{itinerary_data}\n\n"
-        "Be very precise, and try to give short answers only. "
-        "However, sound friendly at the same time."
+        "Be very precise and on the point. However, sound friendly at the same time."
     )
 
