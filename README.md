@@ -1,3 +1,27 @@
+## [Click Here](https://github.com/sardaarNiamotullah/travel_itinerary-backend) to see the github repo
+
+
+## ✈️ Travel Itinerary – Backend
+This Django project provides a RESTful API that delivers real-time and AI-enhanced weather data. It fetches weather forecasts from the Meteosource Weather API via RapidAPI, and integrates with the Groq API to enhance responses with AI-generated insights.
+
+To use this application, you'll need to obtain API keys from the following services:
+
+## 🔑 Required API Keys
+
+### Meteosource Weather API via RapidAPI
+
+- Visit: [RapidAPI - Meteosource](https://rapidapi.com/MeteosourceWeather/api/ai-weather-by-meteosource/playground/apiendpoint_051aea00-95fb-437c-944c-06dd8d4049d8)
+
+- Create a RapidAPI account if you don't have one.
+
+- Subscribe to the API and copy your X-RapidAPI-Key.
+
+### Groq API (for AI features)
+
+- Visit: [Groq Console](https://console.groq.com/keys)
+- Sign up or log in.
+- Generate an API key.
+
 ## 🚀 Getting Started
 
 ### Prerequisites
@@ -39,62 +63,19 @@
    GROQ_MODEL=llama-3.3-70b-versatile
    ```
 
-4. **Open your browser** and navigate to `http://localhost:3000`
+5. **Run the development server** 
+   ```bash
+   python manage.py runserver
+   ```
 
-## 🔧 Environment Variables
-
-### Backend (.env)
-```
-DATABASE_URL="postgresql://user:password@localhost:5432/chatapp"
-JWT_SECRET="your-secret-key"
-GOOGLE_CLIENT_ID="your-google-client-id"
-GOOGLE_CLIENT_SECRET="your-google-client-secret"
-PORT=8000
-```
-
-### Frontend (.env)
-```
-NEXT_PUBLIC_API_URL="http://localhost:8000"
-NEXT_PUBLIC_SOCKET_URL="http://localhost:8000"
-```
-
-## 📚 API Documentation
-
-### Authentication Endpoints
-- `POST /api/auth/register` - Register a new user
-- `POST /api/auth/login` - Login an existing user
-- `GET /api/auth/google` - Google OAuth authentication
-- `GET /api/auth/google/callback` - Google OAuth callback
-
-### Chat Endpoints
-- `GET /api/chats` - Get all chats for a user
-- `POST /api/chats` - Create a new chat
-- `GET /api/chats/:id` - Get chat by ID
-- `GET /api/chats/:id/messages` - Get messages for a chat
-- `POST /api/chats/:id/messages` - Send a new message
-
-## 🔌 Socket.io Events
-
-### Client Events
-
-- `register` - Register user with their username
-- `send_message` - Send a direct message to another user
-- `disconnect_connection` - User disconnects from socket
-
-### Server Events
-
-- `receive_message` - Receive a new message
+5. **🚚 Deployment** 
+   ```bash
+   gunicorn your_project_name.wsgi:application
+   ```
 
 
-## 📂 Project Structure
 
-```
-chatapp/
-├── backend_expressjs/
-└── frontend_nextjs/
-```
-
-## 🤝 Contributing
+## Contributing
 
 Got an idea to make it even better? Fork it, code it, and create a PR — contributions are **always welcome**!
 
@@ -111,7 +92,12 @@ Got an idea to make it even better? Fork it, code it, and create a PR — contri
 
 ## Acknowledgments
 
-- [Express.js](https://expressjs.com/)
-- [Next.js](https://nextjs.org/)
-- [Socket.io](https://socket.io/)
-- [Prisma](https://www.prisma.io/)
+- Django – The high-level Python web framework.
+- Django REST Framework – Powerful and flexible toolkit for building Web APIs.
+- django-cors-headers – For handling Cross-Origin Resource Sharing (CORS).
+- Groq – AI API used for generating smart responses.
+- Gunicorn – Python WSGI HTTP server for production deployment.
+- httpx – A modern, fully featured HTTP client for Python.
+- python-decouple – For managing environment variables.
+- Pydantic – Data validation and settings management using Python type annotations.
+- Requests – Simple HTTP library for Python, used for making external API calls.
