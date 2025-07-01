@@ -52,7 +52,7 @@ INSTALLED_APPS = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173",  # React app running in Vite
+    "https://travel-aitinerary.vercel.app/"
 ]
 
 MIDDLEWARE = [
