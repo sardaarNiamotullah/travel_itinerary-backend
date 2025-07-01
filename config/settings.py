@@ -52,7 +52,8 @@ INSTALLED_APPS = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    "https://travel-aitinerary.vercel.app/"
+    "http://localhost:5173",                      # Local dev (Vite)
+    "https://travel-aitinerary.vercel.app",       # Your deployed frontend
 ]
 
 MIDDLEWARE = [
